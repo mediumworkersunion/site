@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import Logo from './partials/Logo';
 import FooterNav from './partials/FooterNav';
 import FooterSocial from './partials/FooterSocial';
+import { useContentful } from '../../contentful/useContentful';
 
 const propTypes = {
   topOuterDivider: PropTypes.bool,
@@ -27,6 +28,7 @@ const Footer = ({
     topOuterDivider && 'has-top-divider',
     className
   );
+  const {homepageData: data} = useContentful()
 
   return (
     <footer
@@ -45,7 +47,7 @@ const Footer = ({
           </div>
           <div className="footer-bottom space-between text-xxs invert-order-desktop">
             <FooterNav />
-            <div className="footer-copyright">Made by <a href="https://cruip.com">Cruip</a>. All right reserved</div>
+            <div className="footer-copyright">Built by <a href="/">{data['Name'].text}</a>. All right reserved</div>
           </div>
         </div>
       </div>
