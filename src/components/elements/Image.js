@@ -29,33 +29,32 @@ const Image = ({
 
   const [loaded, setLoaded] = useState(false);
 
-  const image = useRef(null);
+  const imageRef = useRef(null);
 
   useEffect(() => {
-    handlePlaceholder(image.current);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    const placeholder = document.createElement('img');
+    if (!loaded) {
+      imageRef.current.style.display = 'none';
+      imageRef.current.before(placeholder);
+      placeholder.src = placeholderSrc(
+        imageRef.current.getAttribute('width') || 0,
+        imageRef.current.getAttribute('height') || 0
+      );
+      placeholder.width = imageRef.current.getAttribute('width');
+      placeholder.height = imageRef.current.getAttribute('height');
+      placeholder.style.opacity = '0';
+      imageRef.current.className && placeholder.classList.add(imageRef.current.className);
+      placeholder.remove();
+      imageRef.current.style.display = '';      
+    }
+  }, [imageRef, loaded]);
   
   const placeholderSrc = (w, h) => {
     return `data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${w} ${h}"%3E%3C/svg%3E`;
   }
 
   const handlePlaceholder = (img) => {
-    const placeholder = document.createElement('img');
-    if (!loaded) {
-      img.style.display = 'none';
-      img.before(placeholder);
-      placeholder.src = placeholderSrc(
-        img.getAttribute('width') || 0,
-        img.getAttribute('height') || 0
-      );
-      placeholder.width = img.getAttribute('width');
-      placeholder.height = img.getAttribute('height');
-      placeholder.style.opacity = '0';
-      img.className && placeholder.classList.add(img.className);
-      placeholder.remove();
-      img.style.display = '';      
-    }
+    
   }
 
   function onLoad() {
@@ -65,7 +64,7 @@ const Image = ({
   return (
     <img
       {...props}
-      ref={image}
+      ref={imageRef}
       className={className}
       src={src}
       width={width}

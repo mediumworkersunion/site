@@ -1,12 +1,17 @@
 import React from 'react';
 import classNames from 'classnames';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import Image from '../../elements/Image';
+
+
+import { useContentful } from '../../../contentful/useContentful';
 
 const Logo = ({
   className,
   ...props
 }) => {
+
+  const {homepageData: data} = useContentful()
 
   const classes = classNames(
     'brand',
@@ -19,12 +24,14 @@ const Logo = ({
       className={classes}
     >
       <h1 className="m-0">
-        <Link to="/">
+        <Link href="/"><div style={{display:'flex', flexDirection:'row', alignItems:'center'}}>
           <Image
-            src={require('./../../../assets/images/logo.svg')}
-            alt="Open"
+            src={data['Logo'].media.url}
+            alt={data['Logo'].text}
             width={32}
             height={32} />
+          <span className="text-sm" style={{marginLeft: '16px'}}>{data['Name'].text}</span>
+          </div>
         </Link>
       </h1>
     </div>

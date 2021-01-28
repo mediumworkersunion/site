@@ -1,0 +1,23 @@
+diff --git a/node_modules/react-contentful/ContentfulCache.js b/node_modules/react-contentful/ContentfulCache.js
+index 38af760..10b99f5 100644
+--- a/node_modules/react-contentful/ContentfulCache.js
++++ b/node_modules/react-contentful/ContentfulCache.js
+@@ -3,7 +3,7 @@
+ exports.__esModule = true;
+ exports["default"] = void 0;
+ 
+-var Flatted = require('flatted/cjs');
++var Flatted = require('flatted');
+ 
+ var ContentfulCache = /*#__PURE__*/function () {
+   function ContentfulCache(cache) {
+diff --git a/node_modules/react-contentful/es/ContentfulCache.js b/node_modules/react-contentful/es/ContentfulCache.js
+index 5f4f8e4..a279d41 100644
+--- a/node_modules/react-contentful/es/ContentfulCache.js
++++ b/node_modules/react-contentful/es/ContentfulCache.js
+@@ -1,4 +1,4 @@
+-var Flatted = require('flatted/cjs');
++var Flatted = require('flatted');
+ 
+ var ContentfulCache = /*#__PURE__*/function () {
+   function ContentfulCache(cache) {
