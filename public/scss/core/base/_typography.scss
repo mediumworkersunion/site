@@ -3,8 +3,8 @@ html {
 }
 
 body {
-	color: color(base);
-	font-size: 1rem;
+	color: color(base) !important;
+	font-size: 1rem !important;
 }
 
 body,
@@ -20,10 +20,10 @@ h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
 	@include font-family(heading);
 	@include font-weight(heading);
-	clear: both;
-	color: color(heading);
-	word-wrap: break-word;
-	overflow-wrap: break-word;
+	clear: both !important;
+	color: color(heading) !important;
+	word-wrap: break-word !important;
+	overflow-wrap: break-word !important;
 }
 
 h1,
@@ -81,74 +81,74 @@ a {
 	&.button-link {
 		@include anchor-aspect(button-link);
 		@include font-weight(button-link);
-		text-transform: $link-button--transform;
+		text-transform: $link-button--transform !important;
 	}
 
 	&.func-link {
 		@include anchor-aspect(func-link);
 		@include font-weight(func-link);
-		text-transform: $link-func--transform;		
+		text-transform: $link-func--transform !important;		
 	}
 }
 
 h1,
 .h1 {
-	margin-top: $spacing--h1-t;
-	margin-bottom: $spacing--h1-b;
+	margin-top: $spacing--h1-t !important;
+	margin-bottom: $spacing--h1-b !important;
 }
 
 h2,
 .h2 {
-	margin-top: $spacing--h2-t;
-	margin-bottom: $spacing--h2-b;
+	margin-top: $spacing--h2-t !important;
+	margin-bottom: $spacing--h2-b !important;
 }
 
 h3,
 .h3 {
-	margin-top: $spacing--h3-t;
-	margin-bottom: $spacing--h3-b;
+	margin-top: $spacing--h3-t !important;
+	margin-bottom: $spacing--h3-b !important;
 }
 
 h4, h5, h6,
 .h4, .h5, .h6 {
-	margin-top: $spacing--hx-t;
-	margin-bottom: $spacing--hx-b;
+	margin-top: $spacing--hx-t !important;
+	margin-bottom: $spacing--hx-b !important;
 }
 
 p {
-	margin-top: 0;
-	margin-bottom: $spacing--shared-v;
+	margin-top: 0 !important;
+	margin-bottom: $spacing--shared-v !important;
 }
 
 dfn, cite, em, i {
-	font-style: italic;
+	font-style: italic !important;
 }
 
 blockquote {
 	@include font-size(bquote);
-	margin-top: $spacing--shared-v;
-	margin-bottom: $spacing--shared-v;
-	margin-left: $spacing--shared-h;
+	margin-top: $spacing--shared-v !important;
+	margin-bottom: $spacing--shared-v !important;
+	margin-left: $spacing--shared-h !important;
 
 	&::before {
-		content: "\201C";
+		content: "\201C" !important;
 	}
 
 	&::after {
-		content: "\201D";
+		content: "\201D" !important;
 	}
 
 	p {
-		display: inline;
+		display: inline !important;
 	}
 }
 
 address {
-	border-width: 1px 0;
-	border-style: solid;
-	border-color: color-border(divider);
-	padding: $spacing--shared-v 0;
-	margin: 0 0 $spacing--shared-v;
+	border-width: 1px 0 !important;
+	border-style: solid !important;
+	border-color: color-border(divider) !important;
+	padding: $spacing--shared-v 0 !important;
+	margin: 0 0 $spacing--shared-v !important;
 }
 
 pre,
@@ -168,30 +168,30 @@ pre .h6  {
 }
 
 pre, code, kbd, tt, var {
-	background: color-bg(code);
+	background: color-bg(code) !important;
 }
 
 pre {
 	@include font-size(pre);
-	max-width: 100%;
-	overflow: auto;
-	padding: $spacing--shared-v $spacing--shared-h;
-	margin-top: $spacing--shared-v;
-	margin-bottom: $spacing--shared-v;
+	max-width: 100% !important;
+	overflow: auto !important;
+	padding: $spacing--shared-v $spacing--shared-h !important;
+	margin-top: $spacing--shared-v !important;
+	margin-bottom: $spacing--shared-v !important;
 }
 
 code, kbd, tt, var {
 	@include font-family(code);
 	@include font-size(code);
-	padding: $spacing--code-v $spacing--code-h;
+	padding: $spacing--code-v $spacing--code-h !important;
 }
 
 abbr, acronym {
-	cursor: help;
+	cursor: help !important;
 }
 
 mark, ins {
-	text-decoration: none;
+	text-decoration: none !important;
 }
 
 b,
@@ -200,7 +200,7 @@ strong {
 }
 
 .invert-color {
-	color: color(base-inverse);
+	color: color(base-inverse) !important;
 
 	a {
 
@@ -219,15 +219,15 @@ strong {
 
 	h1, h2, h3, h4, h5, h6,
 	.h1, .h2, .h3, .h4, .h5, .h6 {
-		color: color(heading-inverse);
+		color: color(heading-inverse) !important;
 	}
 
 	address {
-		border-color: color-border(divider-inverse);
+		border-color: color-border(divider-inverse) !important;
 	}
 
 	pre, code, kbd, tt, var {
-		background: color-bg(code-inverse);
+		background: color-bg(code-inverse) !important;
 	}
 }
 
@@ -258,7 +258,7 @@ strong {
 	}
 }
 
-@include media( '>medium' ) {
+@include media( '<medium') {
 
 	html {
 		@include font-size(base-desktop);

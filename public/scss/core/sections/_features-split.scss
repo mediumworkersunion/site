@@ -1,12 +1,12 @@
 .features-split {
 
 	.section-inner {
-		padding-top: $features-split--padding-t__mobile;
-		padding-bottom: $features-split--padding-b__mobile;
+		padding-top: $features-split--padding-t__mobile !important;
+		padding-bottom: $features-split--padding-b__mobile !important;
 	}
 
 	.section-header {
-		padding-bottom: $features-split-header--padding__mobile;
+		padding-bottom: $features-split-header--padding__mobile !important;
 	}
 }
 
@@ -15,12 +15,12 @@
 	.features-split {
 
 		.section-inner {
-			padding-top: $features-split--padding-t__desktop;
-			padding-bottom: $features-split--padding-b__desktop;
+			padding-top: $features-split--padding-t__desktop !important;
+			padding-bottom: $features-split--padding-b__desktop !important;
 		}
 
 		.section-header {
-			padding-bottom: $features-split-header--padding__desktop;
+			padding-bottom: $features-split-header--padding__desktop !important;
 		}
 	}
 }

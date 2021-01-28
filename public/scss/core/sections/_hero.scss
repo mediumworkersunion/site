@@ -1,8 +1,8 @@
 .hero {
 
 	.section-inner {
-		padding-top: $hero--padding-t__mobile;
-		padding-bottom: $hero--padding-b__mobile;
+		padding-top: $hero--padding-t__mobile !important;
+		padding-bottom: $hero--padding-b__mobile !important;
 	}
 }
 
@@ -11,16 +11,16 @@
 	// Affects only hero full
 	> .hero-content + .hero-figure,
 	> .hero-figure + .hero-content {
-		margin-top: $hero--inner-padding-v_mobile;
+		margin-top: $hero--inner-padding-v_mobile !important;
 	}
 
 	> .hero-figure {
 
 		> a {
-			display: inline-flex;
+			display: inline-flex !important;
 			// prevents stretching
-			align-items: center;
-			vertical-align: top;
+			align-items: center !important;
+			vertical-align: top !important;
 		}
 	}
 }
@@ -34,7 +34,7 @@
 			.split-item {
 
 				.split-item-content {
-					margin-bottom: $hero--inner-padding-v_mobile;
+					margin-bottom: $hero--inner-padding-v_mobile !important;
 				}
 			}
 
@@ -43,7 +43,7 @@
 				.split-item {
 
 					.split-item-image {
-						margin-bottom: $hero--inner-padding-v_mobile;
+						margin-bottom: $hero--inner-padding-v_mobile !important;
 					}
 				}
 			}
@@ -56,8 +56,8 @@
 	.hero {
 
 		.section-inner {
-			padding-top: $hero--padding-t__desktop;
-			padding-bottom: $hero--padding-b__desktop;
+			padding-top: $hero--padding-t__desktop !important;
+			padding-bottom: $hero--padding-b__desktop !important;
 		}
 	}
 
@@ -66,7 +66,7 @@
 		// Affects only hero full
 		> .hero-content + .hero-figure,
 		> .hero-figure + .hero-content {
-			margin-top: $hero--inner-padding-v_desktop;
+			margin-top: $hero--inner-padding-v_desktop !important;
 		}
 	}
 }

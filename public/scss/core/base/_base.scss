@@ -1,59 +1,52 @@
 html {
-	box-sizing: border-box;
+	box-sizing: border-box !important;
 }
 
 *,
 *:before,
-*:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
-	box-sizing: inherit;
+*:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior !important; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+	box-sizing: inherit !important;
 }
 
 body {
-	background: color-bg(body); /* Fallback for when there is no custom background color defined. */
-	-moz-osx-font-smoothing: grayscale;
-	-webkit-font-smoothing: antialiased;
+	background: color-bg(body) !important; /* Fallback for when there is no custom background color defined. */
+	-moz-osx-font-smoothing: grayscale !important;
+	-webkit-font-smoothing: antialiased !important;
 }
 
 hr {
-	border: 0;
+	border: 0 !important;
 	@include divider();
-	margin-top: $spacing--shared-v;
-	margin-bottom: $spacing--shared-v;
+	margin-top: $spacing--shared-v !important;
+	margin-bottom: $spacing--shared-v !important;
 }
 
 ul, ol {
-	margin-top: 0;
-	padding-left: $spacing--shared-h;
+	margin-top: 0 !important;
+	padding-left: $spacing--shared-h !important;
 
 	&:not(:last-child) {
-		margin-bottom: $spacing--shared-v;
+		margin-bottom: $spacing--shared-v !important;
 	}
 }
 
-ul {
-	list-style: disc;
-}
-
-ol {
-	list-style: decimal;
-}
 
 li {
 
 	&:not(:last-child) {
-		margin-bottom: $spacing--shared-v / 2;
+		margin-bottom: $spacing--shared-v / 2 !important;
 	}
 }
 
 li > ul,
 li > ol {
-	margin-top: $spacing--shared-v / 2;
-	margin-bottom: 0;
+	margin-top: $spacing--shared-v / 2 !important;
+	margin-bottom: 0 !important;
 }
 
 dl {
-	margin-top: 0;
-	margin-bottom: $spacing--shared-v;
+	margin-top: 0 !important;
+	margin-bottom: $spacing--shared-v !important;
 }
 
 dt {
@@ -61,57 +54,57 @@ dt {
 }
 
 dd {
-	margin-left: $spacing--shared-h;
-	margin-bottom: $spacing--shared-v;
+	margin-left: $spacing--shared-h !important;
+	margin-bottom: $spacing--shared-v !important;
 }
 
 img {
-	border-radius: $img-radius;
+	border-radius: $img-radius !important;
 }
 
 img,
 svg,
 video {
-	display: block;
-	height: auto; /* Make sure images are scaled correctly. */
-	max-width: 100%; /* Adhere to container width. */
+	display: block !important;
+	height: auto !important; /* Make sure images are scaled correctly. */
+	max-width: 100% !important; /* Adhere to container width. */
 }
 
 figure {
-	margin: $spacing--figure-v $spacing--figure-h; /* Extra wide images within figure tags don't overflow the content area. */
+	margin: $spacing--figure-v $spacing--figure-h !important; /* Extra wide images within figure tags don't overflow the content area. */
 }
 
 figcaption {
-	padding: $spacing--figcaption-v $spacing--figcaption-h;
+	padding: $spacing--figcaption-v $spacing--figcaption-h !important;
 }
 
 // tables
 table {
 	@include font-size(table);
-	border-collapse: collapse;
-	margin-bottom: $spacing--shared-v;
-	width: 100%;
+	border-collapse: collapse !important;
+	margin-bottom: $spacing--shared-v !important;
+	width: 100% !important;
 }
 
 tr {
-	border-bottom: 1px solid color-border(divider);
+	border-bottom: 1px solid color-border(divider) !important;
 }
 
 th {
 	@include font-weight(strong);
-	text-align: left;
+	text-align: left !important;
 }
 
 th,
 td {
-	padding: $spacing--table-cell-v $spacing--table-cell-h;
+	padding: $spacing--table-cell-v $spacing--table-cell-h !important;
 
 	&:first-child {
-		padding-left: 0;
+		padding-left: 0 !important;
 	}
 
 	&:last-child {
-		padding-right: 0;
+		padding-right: 0 !important;
 	}
 }
 
@@ -122,6 +115,6 @@ td {
 	}
 
 	tr {
-		border-bottom: 1px solid color-border(divider-inverse);
+		border-bottom: 1px solid color-border(divider-inverse) !important;
 	}
 }

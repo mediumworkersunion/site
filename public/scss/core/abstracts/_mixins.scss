@@ -1,166 +1,166 @@
 // Font Family
 @mixin font-family($elem) {
-	font-family: unquote(get-font-family($elem));
+	font-family: unquote(get-font-family($elem)) !important;
 }
 
 // Font-size + Line-height + Kerning
 @mixin font-size($elem) {
-	font-size: get-font-size($elem);
-	line-height: get-line-height($elem);
-	letter-spacing: get-kerning($elem);
+	font-size: get-font-size($elem) !important;
+	line-height: get-line-height($elem) !important;
+	letter-spacing: get-kerning($elem) !important;
 }
 
 // Font Weight
 @mixin font-weight($elem) {
-	font-weight: get-font-weight($elem);
+	font-weight: get-font-weight($elem) !important;
 }
 
 // Anchor aspect
 @mixin anchor-aspect($type: 'main', $layout: false) {
 	@if ( $type == 'main' ) { // Base
 		@if ( $layout == 'inverse' ) {
-			color: color(link-inverse);
+			color: color(link-inverse) !important;
 		} @else {
-			color: color(link);
+			color: color(link) !important;
 		}
-		text-decoration: $link-main--decoration;
+		text-decoration: $link-main--decoration !important;
 
 		&:hover,
 		&:active {
 			@if ( $layout == 'inverse' ) {
-				color: color(link-hover-inverse);
+				color: color(link-hover-inverse) !important;
 			} @else {
-				color: color(link-hover);
+				color: color(link-hover) !important;
 			}
-			outline: 0;
-			text-decoration: $link-main--decoration-hover;
+			outline: 0 !important;
+			text-decoration: $link-main--decoration-hover !important;
 		}
 	} @else if ($type == 'header') {
 		@if ( $layout == 'inverse' ) {
-			color: color(header-link-inverse);
+			color: color(header-link-inverse) !important;
 		} @else {
-			color: color(header-link);
+			color: color(header-link) !important;
 		}
-		text-decoration: $link-header--decoration;
+		text-decoration: $link-header--decoration !important;
 
 		&:hover,
 		&:active {
 			@if ( $layout == 'inverse' ) {
-				color: color(header-link-hover-inverse);
+				color: color(header-link-hover-inverse) !important;
 			} @else {
-				color: color(header-link-hover);
+				color: color(header-link-hover) !important;
 			}
-			text-decoration: $link-header--decoration-hover;
+			text-decoration: $link-header--decoration-hover !important;
 		}
 	} @else if ($type == 'header-mobile') {
-		color: color(header-link-mobile);
+		color: color(header-link-mobile) !important;
 
 		&:hover,
 		&:active {
-			color: color(header-link-mobile-hover);
+			color: color(header-link-mobile-hover) !important;
 		}
 	} @else if ($type == 'footer') {
 		@if ( $layout == 'inverse' ) {
-			color: color(footer-link-inverse);
+			color: color(footer-link-inverse) !important;
 		} @else {
-			color: color(footer-link);
+			color: color(footer-link) !important;
 		}
-		text-decoration: $link-footer--decoration;
+		text-decoration: $link-footer--decoration !important;
 
 		&:hover,
 		&:active {
 			@if ( $layout == 'inverse' ) {
-				color: color(footer-link-hover-inverse);
+				color: color(footer-link-hover-inverse) !important;
 			} @else {
-				color: color(footer-link-hover);
+				color: color(footer-link-hover) !important;
 			}
-			text-decoration: $link-footer--decoration-hover;
+			text-decoration: $link-footer--decoration-hover !important;
 		}
 	} @else if ($type == 'footer-block') {
 		@if ( $layout == 'inverse' ) {
-			color: color(footer-block-link-inverse);
+			color: color(footer-block-link-inverse) !important;
 		} @else {
-			color: color(footer-block-link);
+			color: color(footer-block-link) !important;
 		}
-		text-decoration: $link-footer-block--decoration;
+		text-decoration: $link-footer-block--decoration !important;
 
 		&:hover,
 		&:active {
 			@if ( $layout == 'inverse' ) {
-				color: color(footer-block-link-hover-inverse);
+				color: color(footer-block-link-hover-inverse) !important;
 			} @else {
-				color: color(footer-block-link-hover);
+				color: color(footer-block-link-hover) !important;
 			}
-			text-decoration: $link-footer-block--decoration-hover;
+			text-decoration: $link-footer-block--decoration-hover !important;
 		}
 	} @else if ($type == 'button-link') {
 		@if ( $layout == 'inverse' ) {
-			color: color(button-link-inverse);
+			color: color(button-link-inverse) !important;
 		} @else {
-			color: color(button-link);
+			color: color(button-link) !important;
 		}
-		text-decoration: $link-button--decoration;
+		text-decoration: $link-button--decoration !important;
 
 		&:hover,
 		&:active {
 			@if ( $layout == 'inverse' ) {
-				color: color(button-link-hover-inverse);
+				color: color(button-link-hover-inverse) !important;
 			} @else {
-				color: color(button-link-hover);
+				color: color(button-link-hover) !important;
 			}
-			text-decoration: $link-button--decoration-hover;
+			text-decoration: $link-button--decoration-hover !important;
 		}
 	} @else if ($type == 'func-link') {
 		@if ( $layout == 'inverse' ) {
-			color: color(func-link-inverse);
+			color: color(func-link-inverse) !important;
 		} @else {
-			color: color(func-link);
+			color: color(func-link) !important;
 		}
-		text-decoration: $link-func--decoration;
+		text-decoration: $link-func--decoration !important;
 
 		&:hover,
 		&:active {
 			@if ( $layout == 'inverse' ) {
-				color: color(func-link-hover-inverse);
+				color: color(func-link-hover-inverse) !important;
 			} @else {
-				color: color(func-link-hover);
+				color: color(func-link-hover) !important;
 			}
-			text-decoration: $link-func--decoration-hover;
+			text-decoration: $link-func--decoration-hover !important;
 		}
 	}
 }
 
 @mixin divider-mix($layout: false) {
-	display: block;
-	height: 1px;
+	display: block !important;
+	height: 1px !important;
 	@if ( $layout == 'inverse' ) {
-		background: color-border(divider-inverse);
+		background: color-border(divider-inverse) !important;
 	} @else {
-		background: color-border(divider);
+		background: color-border(divider) !important;
 	}
 }
 
 @mixin divider($type: false, $layout: false) {
 	@if ( $type == 'before' ) {
-		position: relative;
+		position: relative !important;
 
 		&::before {
-			content: '';
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
+			content: '' !important;
+			position: absolute !important;
+			top: 0 !important;
+			left: 0 !important;
+			width: 100% !important;
 			@include divider-mix($layout);
 		}
 	} @else if ($type == 'after') {
-		position: relative;
+		position: relative !important;
 
 		&::after {
-			content: '';
-			position: absolute;
-			bottom: 0;
-			left: 0;
-			width: 100%;
+			content: '' !important;
+			position: absolute !important;
+			bottom: 0 !important;
+			left: 0 !important;
+			width: 100% !important;
 			@include divider-mix($layout);
 		}
 	} @else {
@@ -176,46 +176,46 @@
 // $hoffset: horizontal offset
 // $voffset: vertical offset
 @mixin illustration($file, $width, $height, $vpos: null, $hoffset: null, $voffset: null) {
-	content: '';
-	position: absolute;
-	width: $width;
-	max-width: $width;
-	height: $height;
-	background-image: url(../../../images/#{$file});
-	background-repeat: no-repeat;
+	content: '' !important;
+	position: absolute !important;
+	width: $width !important;
+	max-width: $width !important;
+	height: $height !important;
+	background-image: url(../../../images/#{$file}) !important;
+	background-repeat: no-repeat !important;
 	@if( unit( $height ) == '%' ) {
-		background-size: contain;
+		background-size: contain !important;
 	} @else {
-		background-size: auto;
+		background-size: auto !important;
 	}
 	@if ( $hoffset ) {
-		left: calc(50% + #{$hoffset});
+		left: calc(50% + #{$hoffset}) !important;
 	} @else {
-		left: 50%;
+		left: 50% !important;
 	}
 	@if ( $vpos == 'top' ) {
 		@if ( $voffset ) {
-			top: #{$voffset};
+			top: #{$voffset} !important;
 		} @else {
-			top: 0;
+			top: 0 !important;
 		}
-		background-position: center top;
-		transform: translate(-50%);
+		background-position: center top !important;
+		transform: translate(-50%) !important;
 	} @else if ( $vpos == 'bottom' ) {
 		@if ( $voffset ) {
-			bottom: #{$voffset};
+			bottom: #{$voffset} !important;
 		} @else {
-			bottom: 0;
+			bottom: 0 !important;
 		}
-		background-position: center bottom;
-		transform: translate(-50%);
+		background-position: center bottom !important;
+		transform: translate(-50%) !important;
 	} @else {
-		background-position: center;
+		background-position: center !important;
 		@if ( $voffset ) {
-			top: calc(50% + #{$voffset});
+			top: calc(50% + #{$voffset}) !important;
 		} @else {
-			top: 50%;
+			top: 50% !important;
 		}
-		transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%) !important;
 	}
 }

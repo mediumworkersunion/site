@@ -1,171 +1,171 @@
 .button {
-    display: inline-flex;
+    display: inline-flex !important;
 	@include font-size(button);
     @include font-weight(button);
-	padding: (($button-form--height - get-line-height(button) - ($button-form--border-width * 2)) / 2) ($button--padding-h - $button-form--border-width);
-	height: $button-form--height;
+	padding: (($button-form--height - get-line-height(button) - ($button-form--border-width * 2)) / 2) ($button--padding-h - $button-form--border-width) !important;
+	height: $button-form--height !important;
     text-decoration: none !important;
-	text-transform: $button--transform;
-	color: color(button-light);
-    background-color: color-bg(button-light);
-    border-width: $button-form--border-width;
-	border-style: $button-form--border-style;
-	border-color: color-border(button-light);
-    border-radius: $button--radius;
-    cursor: pointer;
-    justify-content: center;
-    text-align: center;
-    letter-spacing: inherit;
-    white-space: nowrap;
-	transition: background .15s ease;
+	text-transform: $button--transform !important;
+	color: color(button-light) !important;
+    background-color: color-bg(button-light) !important;
+    border-width: $button-form--border-width !important;
+	border-style: $button-form--border-style !important;
+	border-color: color-border(button-light) !important;
+    border-radius: $button--radius !important;
+    cursor: pointer !important;
+    justify-content: center !important;
+    text-align: center !important;
+    letter-spacing: inherit !important;
+    white-space: nowrap !important;
+	transition: background .15s ease !important;
 
     &:active {
-        outline: 0;
+        outline: 0 !important;
     }
 
 	&:hover {
-		background-color: color-bg(button-light-hover);
-		border-color: color-border(button-light-hover);
+		background-color: color-bg(button-light-hover) !important;
+		border-color: color-border(button-light-hover) !important;
 	}
 
 	&.is-loading {
-		position: relative;
+		position: relative !important;
 		color: transparent!important;
-		pointer-events: none;
+		pointer-events: none !important;
 
 		&::after {
-			content: '';
-			display: block;
-			position: absolute;
-			width: get-line-height(button);
-			height: get-line-height(button);
-			margin-left: -(get-line-height(button) / 2);
-			margin-top: -(get-line-height(button) / 2);
-			top: 50%;
-			left: 50%;
-			border: $button-loading--thickness solid color(button-light);
-			border-radius: 50%;
+			content: '' !important;
+			display: block !important;
+			position: absolute !important;
+			width: get-line-height(button) !important;
+			height: get-line-height(button) !important;
+			margin-left: -(get-line-height(button) / 2) !important;
+			margin-top: -(get-line-height(button) / 2) !important;
+			top: 50% !important;
+			left: 50% !important;
+			border: $button-loading--thickness solid color(button-light) !important;
+			border-radius: 50% !important;
 			border-right-color: transparent !important;
 			border-top-color: transparent !important;
-			z-index: 1;
-			animation: button-loading .6s infinite linear;
+			z-index: 1 !important;
+			animation: button-loading .6s infinite linear !important;
 		}
 	}
 
 	&[disabled] {
-		cursor: not-allowed;
-		color: color(button-disabled);
+		cursor: not-allowed !important;
+		color: color(button-disabled) !important;
 		background-color: color-bg(button-disabled) !important;
-		border-color: color-border(button-disabled);
+		border-color: color-border(button-disabled) !important;
 
 		&.is-loading {
 
 			&::after {
-				border-color: color(button-disabled);
+				border-color: color(button-disabled) !important;
 			}
 		}
 	}
 }
 
 .button-sm {
-    padding: (($button-form-sm--height - get-line-height(button) - ($button-form--border-width * 2)) / 2) ($button-sm--padding-h - $button-form--border-width);
-	height: $button-form-sm--height;
+    padding: (($button-form-sm--height - get-line-height(button) - ($button-form--border-width * 2)) / 2) ($button-sm--padding-h - $button-form--border-width) !important;
+	height: $button-form-sm--height !important;
 }
 
 .button-dark {
-	color: color(button-dark);
-    background-color: color-bg(button-dark);
-	border-color: color-border(button-dark);
+	color: color(button-dark) !important;
+    background-color: color-bg(button-dark) !important;
+	border-color: color-border(button-dark) !important;
 
     &:hover {
-        background-color: color-bg(button-dark-hover);
-		border-color: color-border(button-dark-hover);
+        background-color: color-bg(button-dark-hover) !important;
+		border-color: color-border(button-dark-hover) !important;
     }
 
 	&.is-loading {
 
 		&::after {
-			border-color: color(button-dark);
+			border-color: color(button-dark) !important;
 		}
 	}
 }
 
 .button-primary {
-	color: color(button-primary);
-    background-color: color-bg(button-primary);
-	border-color: color-border(button-primary);
+	color: color(button-primary) !important;
+    background-color: color-bg(button-primary) !important;
+	border-color: color-border(button-primary) !important;
 
     &:hover {
-        background-color: color-bg(button-primary-hover);
-		border-color: color-border(button-primary-hover);
+        background-color: color-bg(button-primary-hover) !important;
+		border-color: color-border(button-primary-hover) !important;
     }
 
 	&.is-loading {
 
 		&::after {
-			border-color: color(button-primary);
+			border-color: color(button-primary) !important;
 		}
 	}
 }
 
 .button-secondary {
-	color: color(button-secondary);
-    background-color: color-bg(button-secondary);
-	border-color: color-border(button-secondary);
+	color: color(button-secondary) !important;
+    background-color: color-bg(button-secondary) !important;
+	border-color: color-border(button-secondary) !important;
 
     &:hover {
-        background-color: color-bg(button-secondary-hover);
-		border-color: color-border(button-secondary-hover);
+        background-color: color-bg(button-secondary-hover) !important;
+		border-color: color-border(button-secondary-hover) !important;
     }
 
 	&.is-loading {
 
 		&::after {
-			border-color: color(button-secondary);
+			border-color: color(button-secondary) !important;
 		}
 	}
 }
 
 .button-block {
-    display: flex;
-	width: 100%;
+    display: flex !important;
+	width: 100% !important;
 }
 
 .button-group {
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	margin-right: -($button-group-padding / 2);
-	margin-left: -($button-group-padding / 2);
-	margin-top: -($button-group-padding / 2);
+	display: flex !important;
+	flex-wrap: wrap !important;
+	align-items: center !important;
+	margin-right: -($button-group-padding / 2) !important;
+	margin-left: -($button-group-padding / 2) !important;
+	margin-top: -($button-group-padding / 2) !important;
 
 	&:last-of-type {
-		margin-bottom: -($button-group-padding / 2);
+		margin-bottom: -($button-group-padding / 2) !important;
 	}
 
 	&:not(:last-of-type) {
-		margin-bottom: ($button-group-padding / 2);
+		margin-bottom: ($button-group-padding / 2) !important;
 	}
 
 	> [class*=button] {
-		margin: $button-group-padding / 2;
+		margin: $button-group-padding / 2 !important;
 	}
 }
 
 @include media( '<=medium' ) {
 
 	.button-wide-mobile {
-		width: 100%;
-		max-width: $button--max-size-mobile;
+		width: 100% !important;
+		max-width: $button--max-size-mobile !important;
 	}
 }
 
 @keyframes button-loading {
     0% {
-        transform: rotate(0);
+        transform: rotate(0) !important;
     }
 
     100% {
-        transform: rotate(360deg);
+        transform: rotate(360deg) !important;
     }
 }
