@@ -30,7 +30,7 @@ const Logo = ({
             alt={data['Logo'].text}
             width={32}
             height={32} />
-          <span className="text-sm" style={{marginLeft: '16px'}}>{data['Name'].text}</span>
+          <span className="text-sm" style={{marginLeft: '8px', position: 'relative', top:3, fontFamily: 'BebasNeue', fontWeight: 400, fontSize: '30px !important'}}>{data['Name'].text}</span>
           </div>
         </Link>
       </h1>

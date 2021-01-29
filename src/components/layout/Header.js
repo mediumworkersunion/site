@@ -3,6 +3,12 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Link from 'next/link';
 import Logo from './partials/Logo';
+import {
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem
+} from '@chakra-ui/react'
 
 const propTypes = {
   navPosition: PropTypes.string,
@@ -112,16 +118,47 @@ const Header = ({
                       navPosition && `header-nav-${navPosition}`
                     )}>
                     <li>
-                      <Link href="/#0" onClick={closeMenu}>People</Link>
+                      <Menu>
+                        <MenuButton>
+                          <span style={{pointerEvents: 'all'}}><Link href="javascript:void(0)">People</Link></span>
+                        </MenuButton>
+                        <MenuList>
+                          <MenuItem><Link href="/people/our-union">Our Union</Link></MenuItem>
+                          <MenuItem><Link href="/people/executive-council">Executive Council</Link></MenuItem>
+                          <MenuItem><Link href="/people/meet-cwa">Meet CWA</Link></MenuItem>
+                        </MenuList>
+                      </Menu>
                     </li>
                     <li>
-                      <Link href="/#0" onClick={closeMenu}>Principles</Link>
+                      
+                      <Menu>
+                        <MenuButton>
+                          <span style={{pointerEvents: 'all'}}><Link href="javascript:void(0)">Principles</Link></span>
+                        </MenuButton>
+                        <MenuList>
+                          <MenuItem><Link href="/principles/mission">Mission</Link></MenuItem>
+                          <MenuItem><Link href="/principles/history">History</Link></MenuItem>
+                          <MenuItem><Link href="/principles/articles">Articles</Link></MenuItem>
+                        </MenuList>
+                      </Menu>
                     </li>
                     <li>
-                      <Link href="/#0" onClick={closeMenu}>Power</Link>
+                      <Menu>
+                        <MenuButton>
+                          <span style={{pointerEvents: 'all'}}><Link href="javascript:void(0)">Power</Link></span>
+                        </MenuButton>
+                        <MenuList>
+                          <MenuItem><Link href="/power/reclaim">Reclaim your power</Link></MenuItem>
+                          <MenuItem><Link href="/power/why">Why we organized</Link></MenuItem>
+                          <MenuItem><Link href="/power/events">Events</Link></MenuItem>
+                          <MenuItem><Link href="/power/campaigns">Campaigns</Link></MenuItem>
+                          <MenuItem><Link href="/power/busting-myths">Busting Myths</Link></MenuItem>
+                          <MenuItem><Link href="/power/faq">FAQ</Link></MenuItem>
+                        </MenuList>
+                      </Menu>
                     </li>
                     <li>
-                      <Link href="/#0" onClick={closeMenu}>Press</Link>
+                      <Link href="/press">Press</Link>
                     </li>
                   </ul>
                   {!hideSignin &&

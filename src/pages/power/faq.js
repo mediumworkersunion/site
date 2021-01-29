@@ -1,9 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import App from "../App";
-import { ContentfulProvider } from "../contentful/ContentfulProvider";
-import { getHomeContent } from "../contentful/getHomeContent";
+import App from "../../App";
+import { ContentfulProvider } from "../../contentful/ContentfulProvider";
+import { getHomeContent } from "../../contentful/getHomeContent";
 
 const HomePage = ({ data }) => {
   return (
