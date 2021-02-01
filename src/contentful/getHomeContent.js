@@ -34,6 +34,7 @@ export const getHomeContent = async (preview) => {
           link
           attributionName
           attriibutionContext
+          order
           media {
             url
           }
