@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import React, { useState } from "react";
 
-import { useContentful } from '../../contentful/useContentful';
+import { useContentful } from "../../contentful/useContentful";
 import { SectionProps } from "../../utils/SectionProps";
 import Button from "../elements/Button";
 import ButtonGroup from "../elements/ButtonGroup";
@@ -20,8 +20,8 @@ const Hero = ({
 }) => {
   const [videoModalActive, setVideomodalactive] = useState(false);
 
-  const {homepageData: data} = useContentful()
-  console.log(data)
+  const { homepageData: data } = useContentful();
+  console.log(data);
 
   console.log({ data });
 
@@ -50,46 +50,29 @@ const Hero = ({
     bottomDivider && "has-bottom-divider"
   );
 
-  const welcomeTextArray = data && data['Welcome Text'].text.split(' ')
+  const welcomeTextArray = data && data["Welcome Text"].text.split(" ");
   return (
     <section {...props} className={outerClasses}>
       <div className="container-sm">
         <div className={innerClasses}>
           <div className="hero-content">
-            {data && <h1
-              className="mt-0 mb-16 reveal-from-bottom"
-              data-reveal-delay="200"
-            >
-              {data['Welcome Text'].text}{' '}
-              <span className="text-color-primary">{data['Name'].text}</span>
-              
-            </h1>}
+            {data && (
+              <h1
+                className="mt-0 mb-16 reveal-from-bottom"
+                data-reveal-delay="200"
+              >
+                {data["Welcome Text"].text}{" "}
+                <span className="text-color-primary">{data["Name"].text}</span>
+              </h1>
+            )}
             <div className="container-xs">
               <p
                 className="m-0 mb-32 reveal-from-bottom"
                 data-reveal-delay="400"
-                dangerouslySetInnerHTML={{__html:data['Welcome Tagline'].text}}
+                dangerouslySetInnerHTML={{
+                  __html: data["Welcome Tagline"].text,
+                }}
               />
-              <div className="reveal-from-bottom" data-reveal-delay="600">
-                <ButtonGroup>
-                  <Button
-                    tag="a"
-                    color="primary"
-                    wideMobile
-                    href="https://cruip.com/"
-                  >
-                    {data['Welcome Button 1'].text}
-                  </Button>
-                  <Button
-                    tag="a"
-                    color="dark"
-                    wideMobile
-                    href="https://github.com/cruip/open-react-template/"
-                  >
-                    {data['Welcome Button 2'].text}
-                  </Button>
-                </ButtonGroup>
-              </div>
             </div>
           </div>
           <div
@@ -97,26 +80,26 @@ const Hero = ({
             data-reveal-value="20px"
             data-reveal-delay="800"
           >
-            <a
-              data-video={data['Welcome Item'].link}
+            {/* <a
+              data-video={data["Welcome Item"].link}
               href="#0"
               aria-controls="video-modal"
               onClick={openModal}
-            >
-              <Image
-                className="has-shadow"
-                src={data['Welcome Item'].media.url}
-                alt="Hero"
-                width={896}
-                height={504}
-              />
-            </a>
+            > */}
+            <Image
+              className="has-shadow"
+              src={data["Welcome Item"].media.url}
+              alt="Hero"
+              width={896}
+              height={504}
+            />
+            {/* </a> */}
           </div>
           <Modal
             id="video-modal"
             show={videoModalActive}
             handleClose={closeModal}
-            video={data['Welcome Item'].link}
+            video={data["Welcome Item"].link}
             videoTag="iframe"
           />
         </div>

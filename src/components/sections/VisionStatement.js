@@ -13,7 +13,7 @@ const defaultProps = {
   ...SectionSplitProps.defaults
 }
 
-const FeaturesSplit = ({
+export const VisionStatement = ({
   className,
   topOuterDivider,
   bottomOuterDivider,
@@ -53,9 +53,12 @@ const FeaturesSplit = ({
   );
 
   const sectionHeader = {
-    title: data['Group 2 Title'].text,
-    paragraph: data['Group 2 Subtext'].text
+    title: data['Vision Statement Title'].text,
+    paragraph: data['Vision Statement Subtext'].text
   };
+
+  const items = data['Vision Statement Item']
+  const sorteditems = items.sort((a, b) => a.order < b.order ? -1 : a.order > b.order ? 1: 0)
 
   return (
     <section
@@ -66,7 +69,7 @@ const FeaturesSplit = ({
         <div className={innerClasses}>
           <SectionHeader data={sectionHeader} className="center-content" />
           <div className={splitClasses}>
-            {data['Group 2 Item'].map((item,i) => {
+            {sorteditems.map((item,i) => {
               return (
 <div className="split-item">
               <div className="split-item-content center-content-mobile reveal-from-left" data-reveal-container=".split-item">
@@ -101,8 +104,3 @@ const FeaturesSplit = ({
     </section>
   );
 }
-
-FeaturesSplit.propTypes = propTypes;
-FeaturesSplit.defaultProps = defaultProps;
-
-export default FeaturesSplit;
