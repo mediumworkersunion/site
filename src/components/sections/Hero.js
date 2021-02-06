@@ -62,7 +62,9 @@ const Hero = ({
                 data-reveal-delay="200"
               >
                 {data["Welcome Text"].text}{" "}
-                <span className="text-color-primary">{data["Name"].text}</span>
+                <span className="text-color-primary">
+                  {data["Name"].text.split(" ")[0]}
+                </span>
               </h1>
             )}
             <div className="container-xs">
