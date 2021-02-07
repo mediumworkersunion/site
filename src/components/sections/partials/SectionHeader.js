@@ -16,7 +16,7 @@ const defaultProps = {
   tag: "h2",
 };
 
-const SectionHeader = ({ className, data, children, tag, ...props }) => {
+const SectionHeader = ({ className, data, children, tag, id, ...props }) => {
   const classes = classNames("section-header", className);
 
   const Component = tag;
@@ -25,8 +25,19 @@ const SectionHeader = ({ className, data, children, tag, ...props }) => {
     <>
       {(data.title || data.paragraph) && (
         <div {...props} className={classes}>
-          <div className="container-md">
+          <div className="container-md" id={id}>
             {children}
+            <style jsx>{`
+                .mt-0 {
+                  
+                }
+                @media screen and (max-device-width: 480px) {
+                  .mt-0 {
+                    font-size:30px !important;
+                    font-weight: bold !important;
+                  }
+                }
+              `}</style>
             {data.title && (
               <Component
                 className={classNames(

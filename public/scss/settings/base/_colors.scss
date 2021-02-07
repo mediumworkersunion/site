@@ -3,20 +3,20 @@
 // The color palette
 $palette: (
   light: (
-    1: #eceded,
+    1: #f6f4f4,
     2: #9ca9b3,
     3: #717d86,
   ),
   dark: (
-    1: #151719,
+    1: #1f1313,
     2: #25282c,
     3: #33363a,
   ),
   primary: (
-    1: #ff6161,
-    2: #ffacac,
-    3: #dd5656,
-    4: #e9e9ff,
+    1: #d97f76,
+    2: #fddad8,
+    3: #d33a3a,
+    4: #f6f4f4,
   ),
   secondary: (
     1: #e5b824,
@@ -80,7 +80,7 @@ $icon--color: (
   // accordion icon
   social-inverse: null,
   // social icons
-  social-hover-inverse: null // social icons (:hover),
+  social-hover-inverse: null // social icons (:hover),,
 );
 
 // Misc elements: background color
