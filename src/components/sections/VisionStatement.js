@@ -73,7 +73,7 @@ export const VisionStatement = ({
           />
           <div className={splitClasses}>
             {sorteditems.map((item, i) => {
-              const direction = `row${i % 2 ? "-reverse" : ""}`
+              const direction = `row${i % 2 ? "-reverse" : ""}`;
               return (
                 <>
                   <style jsx>{`
@@ -81,7 +81,6 @@ export const VisionStatement = ({
                       display: flex;
                       flex-direction: ${direction};
                       align-items: center;
-                      
                     }
                     @media screen and (max-device-width: 480px) {
                       .sorted-item {
@@ -108,7 +107,9 @@ export const VisionStatement = ({
                       <div className="text-xxs text-color-primary fw-600 tt-u mb-8">
                         {item.attriibutionContext}
                       </div>
-                      <h3 className="sorted-item-title mt-0 mb-12">{item.text}</h3>
+                      <h3 className="sorted-item-title mt-0 mb-12">
+                        {item.text}
+                      </h3>
                       <p className="m-0">{item.subText}</p>
                     </div>
                     <div className="sorted-item-image">
@@ -117,6 +118,7 @@ export const VisionStatement = ({
                           src={item.media.url}
                           alt={`Features split ${i}`}
                           style={{
+                            filter: "sepia(100%) saturate(50%)",
                             height: "198px !important",
                           }}
                         />

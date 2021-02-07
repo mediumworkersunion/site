@@ -5,3 +5,6 @@
   font-weight: 400;
   font-display: block;
 }
+html {
+  scroll-behavior: smooth;
+}

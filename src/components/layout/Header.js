@@ -44,35 +44,25 @@ const Header = ({
   useEffect(() => {
     isActive && openMenu();
     document.addEventListener('keydown', keyPress);
-    document.addEventListener('click', clickOutside);
     return () => {
       document.removeEventListener('keydown', keyPress);
-      document.removeEventListener('click', clickOutside);
       closeMenu();
     };
   });  
 
   const openMenu = () => {
     document.body.classList.add('off-nav-is-active');
-    nav.current.style.maxHeight = nav.current.scrollHeight + 'px';
     setIsactive(true);
   }
 
   const closeMenu = () => {
     document.body.classList.remove('off-nav-is-active');
-    nav.current && (nav.current.style.maxHeight = null);
     setIsactive(false);
   }
 
   const keyPress = (e) => {
     isActive && e.keyCode === 27 && closeMenu();
   }
-
-  const clickOutside = (e) => {
-    if (!nav.current) return
-    if (!isActive || nav.current.contains(e.target) || e.target === hamburger.current) return;
-    closeMenu();
-  }  
 
   const classes = classNames(
     'site-header',
@@ -101,13 +91,111 @@ const Header = ({
               >
                 <span className="screen-reader">Menu</span>
                 <span className="hamburger">
-                  <span className="hamburger-inner"></span>
+                  <span className="hamburger-inner">
+        
+                  </span>
                 </span>
               </button>
+              <style jsx>{`
+                .mobile-menu {
+                  display: ${isActive?'block':'none'};
+                  position: fixed;
+                  width: 100vw;
+                  height: calc(100vh - 60px);
+                  left: 0;
+                  top: 60px;
+                  background: #1f1313;
+                  opacity: .95;
+                }
+                .mobile-menu ul {
+                  display: flex;
+                  flex-direction: column;
+                  height:100%;
+                  width: 100%;
+                  align-items: center;
+                }
+                .mobile-menu li {
+                  display: block;
+                  width: 100%;
+                  flex: 1;
+                  display: flex;
+                  flex-direction: row;
+                  align-items: center;
+                  justify-content: center;
+                  border-bottom: solid 1px #f6f4f4;
+                }
+                .mobile-menu li a {
+                  display: block;
+                  width: 100%;
+                  height: 100%;
+                  display: flex;
+                  flex-direction: row;
+                  align-items: center;
+                  justify-content: center;
+                }
+                @media screen and (max-device-width: 640px){
+                  .desktop-menu {
+                    display: none;
+                  }
+                }
+              `}</style>
+              {isActive && <nav
+                className="mobile-menu">
+                <ul >
+                  <li>
+                    <a href="#" onClick={(e) => {
+                      e.preventDefault()
+                      const vision = document.getElementById('vision')
+                      console.log(vision)
+                      vision.scrollIntoView({ 
+                        behavior: 'smooth' 
+                      });
+                      setIsactive(false)
+                      }}>Our Vision</a>
+                  </li>
+                  <li>
+                    <a href="#" onClick={(e) => {
+                      e.preventDefault()
+                      const faq = document.getElementById('faq')
+                      console.log(faq)
+                      faq.scrollIntoView({ 
+                        behavior: 'smooth' 
+                      });
+                      setIsactive(false)
+                      
+                      }}>FAQs</a>
+                  </li>
+                  <li>
+                    <a href="#" onClick={(e) => {
+                      e.preventDefault()
+                      const presskit = document.getElementById('presskit')
+                      console.log(presskit)
+                      presskit.scrollIntoView({ 
+                        behavior: 'smooth' 
+                      });
+                      setIsactive(false)
+                      
+                      }}>Press</a>
+                  </li>
+                  <li>
+                    <a href="#" onClick={(e) => {
+                      e.preventDefault()
+                      const email = document.getElementById('email')
+                      console.log(email)
+                      email.scrollIntoView({ 
+                        behavior: 'smooth' 
+                      });
+                      setIsactive(false)
+                      
+                      }}>Contact</a>
+                  </li>
+                </ul>
+              </nav>}
               <nav
                 ref={nav}
                 className={
                   classNames(
+                    'desktop-menu',
                     'header-nav',
                     isActive && 'is-active'
                   )}>
@@ -126,15 +214,10 @@ const Header = ({
                     <li>
                       <Link href="#presskit">Press</Link>
                     </li>
+                    <li>
+                      <Link href="#email" className="button button-primary button-wide-mobile button-sm" onClick={closeMenu}>Contact</Link>
+                    </li>
                   </ul>
-                  {!hideSignin &&
-                    <ul
-                      className="list-reset header-nav-right text-xs"
-                    >
-                      <li>
-                        <Link href="#email" className="button button-primary button-wide-mobile button-sm" onClick={closeMenu}>Contact</Link>
-                      </li>
-                    </ul>}
                 </div>
               </nav>
             </>}

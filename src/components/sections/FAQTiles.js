@@ -57,7 +57,7 @@ export const FAQTiles = ({
   );
 
   return (
-    <section {...props} className={outerClasses}>
+    <section {...props} className={outerClasses} style={{marginTop: 32}}>
       <div className="container">
         <div className={innerClasses}>
           <SectionHeader data={sectionHeader} className="center-content" id="faq"/>
