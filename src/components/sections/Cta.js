@@ -48,6 +48,7 @@ const Cta = ({
     <section
       {...props}
       className={outerClasses}
+      id="email"
     >
       <div className="container">
         <div

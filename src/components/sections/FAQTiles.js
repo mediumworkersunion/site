@@ -60,7 +60,7 @@ export const FAQTiles = ({
     <section {...props} className={outerClasses}>
       <div className="container">
         <div className={innerClasses}>
-          <SectionHeader data={sectionHeader} className="center-content" />
+          <SectionHeader data={sectionHeader} className="center-content" id="faq"/>
           <div className={tilesClasses}>
             {sorteditems.map((i) => {
               return (
@@ -73,6 +73,7 @@ export const FAQTiles = ({
                           alt="Features tile icon 01"
                           width={64}
                           height={64}
+                          style={{padding: 12, ...(i.order === 1 ? {paddingTop: 22, paddingBottom: 22}: {})}}
                         />
                       </div>
                     </div>

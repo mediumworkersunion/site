@@ -60,6 +60,10 @@ const Hero = ({
               <h1
                 className="mt-0 mb-16 reveal-from-bottom"
                 data-reveal-delay="200"
+                style={{
+                  textTransform: 'uppercase',
+                  fontFamily: '"Bebas Neue", sans-serif !important'
+                }}
               >
                 {data["Welcome Text"].text}{" "}
                 <span className="text-color-primary">

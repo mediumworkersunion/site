@@ -118,47 +118,13 @@ const Header = ({
                       navPosition && `header-nav-${navPosition}`
                     )}>
                     <li>
-                      <Menu>
-                        <MenuButton>
-                          <span style={{pointerEvents: 'all'}}><Link href="javascript:void(0)">People</Link></span>
-                        </MenuButton>
-                        <MenuList>
-                          <MenuItem><Link href="/people/our-union">Our Union</Link></MenuItem>
-                          <MenuItem><Link href="/people/executive-council">Executive Council</Link></MenuItem>
-                          <MenuItem><Link href="/people/meet-cwa">Meet CWA</Link></MenuItem>
-                        </MenuList>
-                      </Menu>
+                      <Link href="#vision">Our Vision</Link>
                     </li>
                     <li>
-                      
-                      <Menu>
-                        <MenuButton>
-                          <span style={{pointerEvents: 'all'}}><Link href="javascript:void(0)">Principles</Link></span>
-                        </MenuButton>
-                        <MenuList>
-                          <MenuItem><Link href="/principles/mission">Mission</Link></MenuItem>
-                          <MenuItem><Link href="/principles/history">History</Link></MenuItem>
-                          <MenuItem><Link href="/principles/articles">Articles</Link></MenuItem>
-                        </MenuList>
-                      </Menu>
+                      <Link href="#faq">FAQs</Link>
                     </li>
                     <li>
-                      <Menu>
-                        <MenuButton>
-                          <span style={{pointerEvents: 'all'}}><Link href="javascript:void(0)">Power</Link></span>
-                        </MenuButton>
-                        <MenuList>
-                          <MenuItem><Link href="/power/reclaim">Reclaim your power</Link></MenuItem>
-                          <MenuItem><Link href="/power/why">Why we organized</Link></MenuItem>
-                          <MenuItem><Link href="/power/events">Events</Link></MenuItem>
-                          <MenuItem><Link href="/power/campaigns">Campaigns</Link></MenuItem>
-                          <MenuItem><Link href="/power/busting-myths">Busting Myths</Link></MenuItem>
-                          <MenuItem><Link href="/power/faq">FAQ</Link></MenuItem>
-                        </MenuList>
-                      </Menu>
-                    </li>
-                    <li>
-                      <Link href="/press">Press</Link>
+                      <Link href="#presskit">Press</Link>
                     </li>
                   </ul>
                   {!hideSignin &&
@@ -166,7 +132,7 @@ const Header = ({
                       className="list-reset header-nav-right text-xs"
                     >
                       <li>
-                        <Link href="/#0" className="button button-primary button-wide-mobile button-sm" onClick={closeMenu}>Join us!</Link>
+                        <Link href="#email" className="button button-primary button-wide-mobile button-sm" onClick={closeMenu}>Contact</Link>
                       </li>
                     </ul>}
                 </div>
