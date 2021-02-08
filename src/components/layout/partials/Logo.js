@@ -24,8 +24,8 @@ const Logo = ({ className, ...props }) => {
             <Image
               src={data["Logo"].media.url}
               alt={data["Logo"].text}
-              width={32}
-              height={32}
+              width={60}
+              height={60}
             />
 
             {data["Name"].text.split(" ").map((word, i) => {
@@ -36,11 +36,11 @@ const Logo = ({ className, ...props }) => {
                     style={{
                       marginLeft: "8px",
                       position: "relative",
-                      top: 3,
+                      top: 0,
                       fontFamily: "BebasNeue",
-                      fontSize: "32px",
+                      fontSize: "40px",
                       fontWeight: 400,
-                      color: i === 1 ? "#ff6161" : "white",
+                      color: i === 1 ? "#d97f76" : "white",
                     }}
                   >
                     {word}

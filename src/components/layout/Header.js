@@ -82,7 +82,9 @@ const Header = ({
             'site-header-inner',
             bottomDivider && 'has-bottom-divider'
           )}>
-          <Logo />
+          <div style={{position:'relative', top:'8px'}}>
+            <Logo />
+          </div>
           {!hideNav &&
             <>
               <button

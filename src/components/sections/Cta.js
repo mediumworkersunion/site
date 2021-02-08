@@ -83,11 +83,13 @@ const Cta = ({
               {data['Contact Text'].text}
               </h3>
           </div>
-          <div className="cta-action">
+          <div className="cta-action" style={{position:'relative'}}>
             <form
               onSubmit={(e) => {
                 setWasSubmitted(true)
                 return submitForm(({status})=> {
+                  setWasReturned(true)
+                  setSuccessful(status === 'SUCCESS')
                   console.log(status)
                 })(e)
               }}
@@ -106,6 +108,54 @@ const Cta = ({
                 }}>
                 <path d="M9 5H1c-.6 0-1 .4-1 1s.4 1 1 1h8v5l7-6-7-6v5z" fill="#376DF9" />
               </svg>}
+              {hasSubmitted && !hasReturned && (<div>
+                <style jsx>{`
+                  @keyframes rotation {
+                    from {
+                      transform: rotate(0deg);
+                    }
+                    to {
+                      transform: rotate(359deg);
+                    }
+                  }
+                  img.loading {
+                    position: absolute; 
+                    right: 8px;
+                    top: 30%;
+                    transform: translateY(-50%);
+                    width: 24px;
+                    height: 24px;
+                    animation: rotation 2s infinite linear;
+                  }
+                `}</style>
+                  <img className="loading" src="/images/loading.svg"/>
+                </div>)}
+                {wasSuccessful && (<div>
+                  <style jsx>{`
+                    img.success {
+                      position: absolute; 
+                      right: 8px;
+                      top: 50%;
+                      transform: translateY(-50%);
+                      width: 32px;
+                      height: 32px;
+                    }
+                  `}</style>
+                  <img className="success" src="/images/check.svg"/>
+                </div>)}
+                {hasReturned && !wasSuccessful && (<div>
+                  <style jsx>{`
+                    img.fail {
+                      position: absolute; 
+                      right: 8px;
+                      top: 50%;
+                      transform: translateY(-50%);
+                      width: 32px;
+                      height: 32px;
+                    }
+                  `}</style>
+                  <img className="fail" src="/images/error.svg"/>
+                </div>)}
             </Input>
             </form>
           </div>
