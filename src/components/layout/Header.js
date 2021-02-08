@@ -215,7 +215,7 @@ const Header = ({
                       <Link href="#presskit">Press</Link>
                     </li>
                     <li>
-                      <Link href="#email" className="button button-primary button-wide-mobile button-sm" onClick={closeMenu}>Contact</Link>
+                      <Link href="#email" className="button button-primary button-wide-mobile button-sm">Contact</Link>
                     </li>
                   </ul>
                 </div>
