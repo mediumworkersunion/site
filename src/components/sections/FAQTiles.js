@@ -57,24 +57,48 @@ export const FAQTiles = ({
   );
 
   return (
-    <section {...props} className={outerClasses} style={{marginTop: 32}}>
+    <section {...props} className={outerClasses} style={{ marginTop: 32 }}>
       <div className="container">
         <div className={innerClasses}>
-          <SectionHeader data={sectionHeader} className="center-content" id="faq"/>
+          <SectionHeader
+            data={sectionHeader}
+            className="center-content"
+            id="faq"
+          />
           <div className={tilesClasses}>
             {sorteditems.map((i) => {
               return (
                 <div className="tiles-item reveal-from-bottom">
                   <div className="tiles-item-inner">
                     <div className="features-tiles-item-header">
+                      <style jsx>{`
+                        .features-tiles-item-image {
+                          position: relative;
+                          width: 64px;
+                          height: 64px;
+                        }
+                        .features-tiles-item-image .circle {
+                          position: absolute;
+                          left: 0;
+                          top: 0;
+                          width: 100%;
+                          height: 100%;
+                          z-index: 1;
+                        }
+                        .features-tiles-item-image img:nth-last-child(1) {
+                          z-index: 2;
+                          width: 65%;
+                          height: 65%;
+                        }
+                      `}</style>
                       <div className="features-tiles-item-image mb-16">
-                        <Image
-                          src={i.media.url}
-                          alt="Features tile icon 01"
-                          width={64}
-                          height={64}
-                          style={{padding: 12, ...(i.order === 1 ? {paddingTop: 22, paddingBottom: 22}: {})}}
+                        <img
+                          src="/images/circle.svg"
+                          alt="background-circle"
+                          className="circle"
                         />
+
+                        <img src={i.media.url} alt="Features tile icon 01" />
                       </div>
                     </div>
                     <div className="features-tiles-item-content">
