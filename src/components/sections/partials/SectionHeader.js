@@ -16,7 +16,15 @@ const defaultProps = {
   tag: "h2",
 };
 
-const SectionHeader = ({ className, data, children, tag, id, ...props }) => {
+const SectionHeader = ({
+  className,
+  data,
+  children,
+  tag,
+  id,
+  leftAlign,
+  ...props
+}) => {
   const classes = classNames("section-header", className);
 
   const Component = tag;
@@ -28,16 +36,15 @@ const SectionHeader = ({ className, data, children, tag, id, ...props }) => {
           <div className="container-md" id={id}>
             {children}
             <style jsx>{`
+              .mt-0 {
+              }
+              @media screen and (max-device-width: 480px) {
                 .mt-0 {
-                  
+                  font-size: 30px !important;
+                  font-weight: bold !important;
                 }
-                @media screen and (max-device-width: 480px) {
-                  .mt-0 {
-                    font-size:30px !important;
-                    font-weight: bold !important;
-                  }
-                }
-              `}</style>
+              }
+            `}</style>
             {data.title && (
               <Component
                 className={classNames(
@@ -51,6 +58,7 @@ const SectionHeader = ({ className, data, children, tag, id, ...props }) => {
             {data.paragraph && (
               <p
                 className="m-0"
+                style={{ ...(leftAlign ? { textAlign: "left" } : {}) }}
                 dangerouslySetInnerHTML={{ __html: data.paragraph }}
               />
             )}

@@ -68,6 +68,7 @@ export const VisionStatement = ({
         <div className={innerClasses}>
           <SectionHeader
             data={sectionHeader}
+            leftAlign
             className="center-content"
             id="vision"
           />
