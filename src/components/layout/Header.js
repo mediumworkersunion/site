@@ -9,6 +9,7 @@ import {
   MenuList,
   MenuItem
 } from '@chakra-ui/react'
+import { logEvent } from '../../utils/analytics';
 
 const propTypes = {
   navPosition: PropTypes.string,
@@ -145,8 +146,8 @@ const Header = ({
                   <li>
                     <a href="#" onClick={(e) => {
                       e.preventDefault()
+                      logEvent('mobile nav link', 'vision')
                       const vision = document.getElementById('vision')
-                      console.log(vision)
                       vision.scrollIntoView({ 
                         behavior: 'smooth' 
                       });
@@ -156,8 +157,8 @@ const Header = ({
                   <li>
                     <a href="#" onClick={(e) => {
                       e.preventDefault()
+                      logEvent('mobile nav link', 'faq')
                       const faq = document.getElementById('faq')
-                      console.log(faq)
                       faq.scrollIntoView({ 
                         behavior: 'smooth' 
                       });
@@ -168,8 +169,8 @@ const Header = ({
                   <li>
                     <a href="#" onClick={(e) => {
                       e.preventDefault()
+                      logEvent('mobile nav link', 'presskit')
                       const presskit = document.getElementById('presskit')
-                      console.log(presskit)
                       presskit.scrollIntoView({ 
                         behavior: 'smooth' 
                       });
@@ -180,8 +181,8 @@ const Header = ({
                   <li>
                     <a href="#" onClick={(e) => {
                       e.preventDefault()
+                      logEvent('mobile nav link', 'email')
                       const email = document.getElementById('email')
-                      console.log(email)
                       email.scrollIntoView({ 
                         behavior: 'smooth' 
                       });
@@ -206,16 +207,16 @@ const Header = ({
                       navPosition && `header-nav-${navPosition}`
                     )}>
                     <li>
-                      <Link href="#vision">Our Vision</Link>
+                      <Link href="#vision" onClick={() => logEvent('nav link', 'vision')}>Our Vision</Link>
                     </li>
                     <li>
-                      <Link href="#faq">FAQs</Link>
+                      <Link href="#faq" onClick={() => logEvent('nav link', 'faq')}>FAQs</Link>
                     </li>
                     <li>
-                      <Link href="#presskit">Press</Link>
+                      <Link href="#presskit" onClick={() => logEvent('nav link', 'presskit')}>Press</Link>
                     </li>
                     <li>
-                      <Link href="#email" className="button button-primary button-wide-mobile button-sm">Contact</Link>
+                      <Link href="#email" onClick={() => logEvent('nav link', 'email')} className="button button-primary button-wide-mobile button-sm">Contact</Link>
                     </li>
                   </ul>
                 </div>

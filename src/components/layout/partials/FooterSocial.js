@@ -1,5 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
+import { logEvent } from '../../../utils/analytics';
 
 const FooterSocial = ({
   className,
@@ -18,7 +19,7 @@ const FooterSocial = ({
     >
       <ul className="list-reset">
         <li>
-          <a href="https://twitter.com/">
+          <a href="https://twitter.com/mediumworkersunion" onClickCapture={()=> logEvent('footer link', 'twitter')}>
             <svg
               width="16"
               height="16"

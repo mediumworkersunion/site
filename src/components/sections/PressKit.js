@@ -4,8 +4,9 @@ import React from "react";
 
 import { useContentful } from "../../contentful/useContentful";
 import { SectionTilesProps } from "../../utils/SectionProps";
-import SectionHeader from "./partials/SectionHeader";
 import Image from "../elements/Image";
+import { logEvent } from '../../utils/analytics';
+import SectionHeader from "./partials/SectionHeader";
 
 const propTypes = {
   ...SectionTilesProps.types,
@@ -58,7 +59,15 @@ const PressKit = ({
 
   return (
     <>
-      <div style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
+      <div
+        style={{
+          width: "100%",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
         <Image src={data["Press Subtext"].media.url} height="200px" />
       </div>
       <section {...props} className={outerClasses} id="presskit">
@@ -108,7 +117,21 @@ const PressKit = ({
                         <div className="PressKit-item-content">
                           <p className="text-sm mb-0">
                             {item.text}{" "}
-                            <Link href={item.link || (item.media && item.media.url) || "#"}>
+                            <Link
+                              href={
+                                item.link ||
+                                (item.media && item.media.url) ||
+                                "#"
+                              }
+                              onClickCapture={() =>
+                                logEvent(
+                                  "press link",
+                                  item.link ||
+                                    (item.media && item.media.url) ||
+                                    "#"
+                                )
+                              }
+                            >
                               {item.subText || "link"}
                             </Link>
                           </p>
