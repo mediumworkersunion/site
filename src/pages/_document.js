@@ -20,7 +20,7 @@ export default class Document extends NextDocument {
           <link rel="apple-touch-icon" href="/logo192.png" />
           <meta name="robots" content="noindex" />
           <link rel="manifest" href="/manifest.json" />
-          <title>MWU</title>
+          <title>Medium Workers Union (MWU)</title>
         </Head>
         <body>
           <ColorModeScript initialColorMode={theme.config.initialColorMode} />
