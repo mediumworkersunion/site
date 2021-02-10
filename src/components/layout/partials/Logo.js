@@ -13,8 +13,19 @@ const Logo = ({ className, ...props }) => {
   return (
     <div {...props} className={classes}>
       <h1 className="m-0">
-        <Link href="/">
+        <Link href="/"><>
+          <style jsx>{`
+            .logo-banner {
+              zoom: 1;
+            }
+            @media screen and (max-device-width: 640px){
+              .logo-banner {
+                zoom: 0.75;
+              }
+            }
+          `}</style>
           <div
+            className="logo-banner"
             style={{
               display: "flex",
               flexDirection: "row",
@@ -49,7 +60,7 @@ const Logo = ({ className, ...props }) => {
               );
             })}
           </div>
-        </Link>
+        </></Link>
       </h1>
     </div>
   );
