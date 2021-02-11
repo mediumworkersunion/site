@@ -103,7 +103,7 @@ export const FAQTiles = ({
                     </div>
                     <div className="features-tiles-item-content">
                       <h4 className="mt-0 mb-8">{i.text}</h4>
-                      <p className="m-0 text-sm">{i.subText}</p>
+                      <p className="m-0 text-sm" dangerouslySetInnerHTML={{__html: i.subText}} />
                     </div>
                   </div>
                 </div>
