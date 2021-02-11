@@ -18,7 +18,7 @@ export default class Document extends NextDocument {
             content="As the workers at Medium, we want Actions to Matter too"
           />
           <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
-          <meta name="robots" content="noindex" />
+          <meta name="robots" content="nofollow" />
           <link rel="manifest" href="/manifest.json" />
           <title>Medium Workers Union (MWU)</title>
         </Head>
