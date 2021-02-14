@@ -21,6 +21,7 @@ const Home = () => {
       <FAQTiles />
       <PressKit />
       <div
+        id="email"
         style={{
           width: "100%",
           height: "1px",
